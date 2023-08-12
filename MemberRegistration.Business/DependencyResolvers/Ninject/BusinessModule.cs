@@ -22,7 +22,7 @@ namespace MemberRegistration.Business.DependencyResolvers.Ninject
 
             Bind<IKpsService>().To<KpsServiceAdapter>().InSingletonScope();
 
-            Bind<DbContext>().To<MembershipContext>();
+            //Bind<DbContext>().To<MembershipContext>();
         }
     }
 }
