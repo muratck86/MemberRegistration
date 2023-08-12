@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +48,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IMemberDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMemberDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\MemberMap.cs" />
+    <Compile Include="Concrete\EntityFramework\MembershipContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DevFramework.Core\DevFramework.Core.csproj">
+      <Project>{93C91DD3-067E-4806-A7FF-F8F9B3E570D7}</Project>
+      <Name>DevFramework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MemberRegistration.Entities\MemberRegistration.Entities.csproj">
+      <Project>{DD55DAE4-3BEA-48F9-8743-47F4693BDFB1}</Project>
+      <Name>MemberRegistration.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
