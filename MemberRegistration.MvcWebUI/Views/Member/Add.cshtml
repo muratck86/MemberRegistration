@@ -1,0 +1,63 @@
+﻿@model MemberRegistration.MvcWebUI.Models.MemberAddViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>Kayıt Formu</h2>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Bilgilerinizi giriniz.</h4>
+                @using (Html.BeginForm())
+                {
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Adınız</label>
+                            <input type="text" class="form-control" name="member.firstName" id="firstName" placeholder="Adınız" value="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Soyadınız</label>
+                            <input type="text" class="form-control" name="member.lastName" id="lastName" placeholder="Soyadınız" value="">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username">TC Numaranız</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="tcNo" name="member.tcNo" placeholder="TC Numarası">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="member.email" placeholder="you@example.com">
+                    </div>
+                        <div class="mb-3">
+                            <label for="dateOfBirth">Doğum Tarihiniz</label>
+                            <input type="date" class="form-control" id="dateOfBirth" name="member.dateOfBirth" placeholder="01/01/1999">
+                        </div>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Kaydet</button>
+                }
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2023 Murat Company</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Gizlilik</a></li>
+                <li class="list-inline-item"><a href="#">Koşullar</a></li>
+                <li class="list-inline-item"><a href="#">Destek</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
